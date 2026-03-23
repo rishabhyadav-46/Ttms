@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sign Up | Truck Turnaround System</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a2b3d",
+                        "accent-green": "#22c55e",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#15191d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+    <!-- Top Navigation -->
+    <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-10 py-3 sticky top-0 z-50">
+        <div class="flex items-center gap-3 text-primary dark:text-slate-100">
+            <div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+                <span class="material-symbols-outlined text-xl">local_shipping</span>
+            </div>
+            <h2 class="text-primary dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">TTS Portal</h2>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="hidden md:inline text-sm text-slate-500 dark:text-slate-400">Already have an account?</span>
+            <button onclick="window.location.href = 'loginpage.html';"
+                class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 text-primary dark:bg-primary/30 dark:text-slate-100 text-sm font-bold transition-colors">
+                Log In
+            </button>
+        </div>
+    </header>
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+        <div
+            class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+            <!-- Left Side: Visual/Branding -->
+            <div class="hidden lg:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20 pointer-events-none"
+                    style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0); background-size: 24px 24px;">
+                </div>
+                <div class="relative z-10">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-green/20 text-accent-green text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
+                        </span>
+                        System Online
+                    </div>
+                    <h1 class="text-4xl font-black text-white leading-tight mb-4">
+                        Optimize your fleet <br />turnaround time.
+                    </h1>
+                    <p class="text-slate-300 text-lg max-w-md">
+                        Join the network of carriers and logistics providers streamlining dock operations and yard
+                        management.
+                    </p>
+                </div>
+                <div class="relative z-10 space-y-6">
+                    <div class="flex items-center gap-4 text-white">
+                        <div class="size-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-accent-green">speed</span>
+                        </div>
+                        <div>
+                            <p class="font-bold">Fast Lane Processing</p>
+                            <p class="text-sm text-slate-400">Reduce idle time by up to 45%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 text-white">
+                        <div class="size-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-accent-green">analytics</span>
+                        </div>
+                        <div>
+                            <p class="font-bold">Real-time Analytics</p>
+                            <p class="text-sm text-slate-400">Live dashboard for fleet performance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-[-100px] right-[-100px] size-80 rounded-full bg-accent-green/10 blur-3xl">
+                </div>
+            </div>
+            <!-- Right Side: Form -->
+            <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                <div class="mb-8 lg:hidden">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Create Account</h2>
+                    <p class="text-slate-500 dark:text-slate-400">Join the Truck Turnaround System</p>
+                </div>
+                <div class="hidden lg:block mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Get Started</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">Enter your details to create your secure portal
+                        access.</p>
+                </div>
+                <form class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Full
+                                Name</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">person</span>
+                                <input
+                                    class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green transition-all outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+                                    placeholder="Donald Trump" type="text" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Company
+                                Name</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">corporate_fare</span>
+                                <input
+                                    class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green transition-all outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+                                    placeholder="Global Logistics Inc." type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Company
+                            Email</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">mail</span>
+                            <input
+                                class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green transition-all outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+                                placeholder="name@company.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Password</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">lock</span>
+                                <input
+                                    class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green transition-all outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+                                    placeholder="••••••••" type="password" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Confirm
+                                Password</label>
+                            <div class="relative">
+                                <span
+                                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">lock_reset</span>
+                                <input
+                                    class="w-full pl-12 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green transition-all outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+                                    placeholder="••••••••" type="password" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 py-2">
+                        <input class="mt-1 size-4 rounded border-slate-300 text-accent-green focus:ring-accent-green"
+                            id="terms" type="checkbox" />
+                        <label class="text-xs text-slate-500 dark:text-slate-400 leading-snug" for="terms">
+                            By signing up, I agree to the <a
+                                class="text-primary dark:text-slate-200 font-bold underline underline-offset-2"
+                                href="#">Terms of Service</a> and <a
+                                class="text-primary dark:text-slate-200 font-bold underline underline-offset-2"
+                                href="#">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-accent-green hover:bg-green-600 text-white font-bold rounded-lg shadow-lg shadow-accent-green/20 transition-all flex items-center justify-center gap-2 group"
+                        type="submit">
+                        Create Account
+                        <span
+                            class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                    <div class="pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">
+                            Already have an account?
+                            <a class="text-primary dark:text-slate-200 font-bold hover:text-accent-green transition-colors"
+                                href="loginpage.html">Log In</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="p-6 text-center">
+        <p class="text-xs text-slate-400 dark:text-slate-600 uppercase tracking-widest font-bold">
+            © 2024 Truck Turnaround System • Enterprise Grade Logistics
+        </p>
+    </footer>
+</body>
+
+</html>

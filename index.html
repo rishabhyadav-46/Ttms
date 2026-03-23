@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Truck Turnaround System - Sustainable Logistics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --earth-green: #2d4c3e;
+            --moss-green: #4a6d5c;
+            --soil-brown: #3e2723;
+            --clay: #a67c52;
+            --sky-soft: #e3f2fd;
+            --leaf-vibrant: #76c893;
+            --river-blue: #1e88e5;
+        }
+        @layer base {
+            body {
+                @apply selection:bg-[var(--leaf-vibrant)] selection:text-white;
+            }
+        }
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .flowing-gradient {
+            background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 40%, #fdfbf7 100%);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d4c3e",
+                        "accent": "#76c893",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1c1a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-stone-800 dark:text-stone-200 antialiased overflow-x-hidden">
+    <div class="relative flex min-h-screen flex-col">
+        <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-[var(--sky-soft)] opacity-50 blur-3xl organic-shape">
+            </div>
+            <div
+                class="absolute top-1/2 -left-48 w-[600px] h-[600px] bg-[var(--leaf-vibrant)] opacity-5 blur-3xl organic-shape">
+            </div>
+        </div>
+        <header
+            class="sticky top-0 z-50 w-full border-b border-stone-200/50 bg-white/60 dark:bg-background-dark/60 backdrop-blur-xl">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--earth-green)] text-[var(--leaf-vibrant)] shadow-inner">
+                        <span class="material-symbols-outlined text-3xl">eco</span>
+                    </div>
+                    <h2 class="text-xl font-extrabold tracking-tight text-[var(--earth-green)] dark:text-white">Truck
+                        Turnaround System</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-bold text-stone-600 hover:text-[var(--leaf-vibrant)] dark:text-stone-300 transition-colors uppercase tracking-widest"
+                        href="entrydetails.html">Services</a>
+                    <a class="text-sm font-bold text-stone-600 hover:text-[var(--leaf-vibrant)] dark:text-stone-300 transition-colors uppercase tracking-widest"
+                        href="report.html">Reports</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.location.href='loginpage.html'; "
+                        class="hidden sm:flex h-11 items-center justify-center rounded-full px-6 text-sm font-bold text-[var(--earth-green)] dark:text-white hover:bg-stone-100 transition-colors">
+                        Login
+                    </button>
+                    <button onclick="window.location.href = 'signup.html';"
+                        class="flex h-11 items-center justify-center rounded-full bg-[var(--leaf-vibrant)] px-7 text-sm font-black text-[var(--earth-green)] shadow-lg shadow-[var(--leaf-vibrant)]/20 hover:scale-105 active:scale-95 transition-all uppercase tracking-tight">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="relative z-10">
+            <section class="relative min-h-[90vh] flex items-center pt-12 pb-20 lg:pt-0 lg:pb-0">
+                <div class="absolute inset-0 z-0">
+                    <div
+                        class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-stone-100 dark:from-stone-900 to-transparent">
+                    </div>
+                    <svg class="absolute bottom-0 w-full h-auto opacity-20 text-[var(--earth-green)]"
+                        preserveAspectRatio="none" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,197.3C960,213,1056,203,1152,181.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+                <div class="mx-auto max-w-7xl px-6 w-full relative z-10">
+                    <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-12">
+                        <div class="flex flex-col gap-10 lg:col-span-6">
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center gap-2">
+                                    <span class="h-[2px] w-12 bg-[var(--leaf-vibrant)]"></span>
+                                    <span
+                                        class="text-xs font-black uppercase tracking-[0.3em] text-[var(--moss-green)]">
+                                        Logistics Excellence
+                                    </span>
+                                </div>
+                                <h1
+                                    class="text-5xl font-black tracking-tighter text-[var(--earth-green)] dark:text-white sm:text-7xl leading-[1.1]">
+                                    Welcome to the <br />
+                                    <span
+                                        class="text-[var(--leaf-vibrant)] italic underline decoration-wavy decoration-stone-200">Truck
+                                        Turnaround</span> System
+                                </h1>
+                                <p
+                                    class="text-xl leading-relaxed text-stone-600 dark:text-stone-400 max-w-md border-l-4 border-[var(--leaf-vibrant)] pl-6">
+                                    Efficiency in Every Gate. Streamlining gate entry, documentation, and reporting to
+                                    save manpower and time.
+                                </p>
+                            </div>
+                            <div class="flex flex-wrap gap-5">
+                                <button
+                                    class="flex h-16 min-w-[200px] items-center justify-center rounded-2xl bg-[var(--earth-green)] px-10 text-lg font-black text-white shadow-2xl shadow-[var(--earth-green)]/30 hover:translate-y-[-2px] transition-all">
+                                    Get Started
+                                </button>
+                                <button
+                                    class="flex h-16 min-w-[200px] items-center justify-center rounded-2xl border-4 border-[var(--earth-green)] px-10 text-lg font-black text-[var(--earth-green)] dark:border-white/20 dark:text-white hover:bg-[var(--earth-green)]/5 transition-all">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6 relative">
+                            <div
+                                class="relative w-full aspect-square md:aspect-video lg:aspect-square flex items-center justify-center">
+                                <div
+                                    class="absolute inset-0 organic-shape bg-[var(--leaf-vibrant)] opacity-10 animate-pulse">
+                                </div>
+                                <div class="relative z-10 p-4">
+                                    <div
+                                        class="rounded-[4rem] overflow-hidden border-[12px] border-white dark:border-stone-800 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                                        <img alt="Modern Logistics Illustration"
+                                            class="w-full h-full object-cover grayscale brightness-110 sepia-[.2] contrast-125"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dCQJv0y9g3VLtiv5mjGAbjwDcfwxi_ykh1Af6XOO_oSu9JclwyC48fZvwc6BP2CT66MgF27NfXcQuG_mDkFEKOnw5cppgUwQ10hxNThBx4uTSn0n8H9DWuR9a8Sa48FpaQNRbS4bifLRaYlWGSl4ct78YJjY1w7HLe6TxLsaMjg3RaLo2bILhSzpteirXHke22JSiJl3J0CBXpTJ9jQRdg-r44LwwCtx6VwxQ1zKNLrarTHrwOqVbSpnY9W93nvyKAasLrR07toq" />
+                                        <div class="absolute inset-0 bg-[var(--moss-green)]/20 mix-blend-multiply">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-[var(--leaf-vibrant)] text-white flex items-center justify-center shadow-xl">
+                                        <span class="material-symbols-outlined text-4xl">forest</span>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-12 -left-8 h-20 w-20 rounded-2xl bg-[var(--clay)] text-white flex items-center justify-center shadow-xl -rotate-12">
+                                        <span class="material-symbols-outlined text-3xl">local_shipping</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-32 relative">
+                <div class="mx-auto max-w-7xl px-6">
+                    <div class="mb-24 flex flex-col md:flex-row items-end gap-12">
+                        <div class="flex flex-col gap-6 max-w-2xl">
+                            <h2
+                                class="text-4xl font-black tracking-tight text-[var(--earth-green)] dark:text-white sm:text-6xl italic">
+                                Streamline Your <span class="text-[var(--leaf-vibrant)]">Logistics</span></h2>
+                            <p class="text-xl text-stone-600 dark:text-stone-400 font-medium">Optimizing gate operations
+                                with cutting-edge technology and automated workflows.</p>
+                        </div>
+                        <div class="hidden md:block flex-1 h-px bg-[var(--moss-green)]/20 mb-6"></div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                        <div
+                            class="group relative flex flex-col gap-8 rounded-[3rem] border-2 border-transparent bg-white p-10 dark:bg-stone-900/50 shadow-xl shadow-stone-200/50 dark:shadow-none transition-all hover:-translate-y-4 hover:border-[var(--leaf-vibrant)]">
+                            <div
+                                class="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-[var(--sky-soft)] text-[var(--river-blue)] group-hover:bg-[var(--leaf-vibrant)] group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-4xl">sensors</span>
+                            </div>
+                            <div class="space-y-4">
+                                <h3 class="text-2xl font-black text-[var(--earth-green)] dark:text-white">Gate Entry
+                                    Details </h3>
+                                <p class="text-base leading-relaxed text-stone-600 dark:text-stone-400">Gate entry details from start to end goes here</p>
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 h-16 w-16 bg-stone-50 dark:bg-stone-800 rounded-tl-[2rem] flex items-center justify-center group-hover:bg-[var(--leaf-vibrant)] transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-stone-300 group-hover:text-white">arrow_outward</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col gap-8 rounded-[3rem] border-2 border-transparent bg-white p-10 dark:bg-stone-900/50 shadow-xl shadow-stone-200/50 dark:shadow-none transition-all hover:-translate-y-4 hover:border-[var(--leaf-vibrant)]">
+                            <div
+                                class="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-orange-50 text-[var(--clay)] group-hover:bg-[var(--leaf-vibrant)] group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-4xl">description</span>
+                            </div>
+                            <div class="space-y-4">
+                                <h3 class="text-2xl font-black text-[var(--earth-green)] dark:text-white">
+                                    Documentation</h3>
+                                <p class="text-base leading-relaxed text-stone-600 dark:text-stone-400">Go paperless
+                                    with secure digital document management for bills of lading and driver credentials.
+                                </p>
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 h-16 w-16 bg-stone-50 dark:bg-stone-800 rounded-tl-[2rem] flex items-center justify-center group-hover:bg-[var(--leaf-vibrant)] transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-stone-300 group-hover:text-white">arrow_outward</span>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col gap-8 rounded-[3rem] border-2 border-transparent bg-white p-10 dark:bg-stone-900/50 shadow-xl shadow-stone-200/50 dark:shadow-none transition-all hover:-translate-y-4 hover:border-[var(--leaf-vibrant)]">
+                            <div
+                                class="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-[var(--leaf-vibrant)]/10 text-[var(--leaf-vibrant)] group-hover:bg-[var(--leaf-vibrant)] group-hover:text-white transition-all duration-500">
+                                <span class="material-symbols-outlined text-4xl">analytics</span>
+                            </div>
+                            <div class="space-y-4">
+                                <h3 class="text-2xl font-black text-[var(--earth-green)] dark:text-white">Real-time
+                                    Reporting</h3>
+                                <p class="text-base leading-relaxed text-stone-600 dark:text-stone-400">Gain insights
+                                    with instant analytics, performance reports, and bottleneck detection across all
+                                    gates.</p>
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 h-16 w-16 bg-stone-50 dark:bg-stone-800 rounded-tl-[2rem] flex items-center justify-center group-hover:bg-[var(--leaf-vibrant)] transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-stone-300 group-hover:text-white">arrow_outward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-24 relative overflow-hidden">
+                <div class="mx-auto max-w-6xl px-6 relative z-10">
+                    <div
+                        class="relative overflow-hidden rounded-[4rem] bg-[var(--soil-brown)] px-8 py-24 text-center shadow-3xl sm:px-16 border-8 border-stone-200">
+                        <div
+                            class="absolute -left-20 -top-20 h-80 w-80 organic-shape bg-[var(--moss-green)] opacity-20">
+                        </div>
+                        <div
+                            class="absolute -right-20 -bottom-20 h-80 w-80 organic-shape bg-[var(--leaf-vibrant)] opacity-20">
+                        </div>
+                        <div class="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-10">
+                            <div
+                                class="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-[var(--leaf-vibrant)] backdrop-blur-md">
+                                <span class="material-symbols-outlined text-5xl">nature_people</span>
+                            </div>
+                            <h2 class="text-4xl font-black tracking-tight text-white sm:text-6xl leading-[1.1]">
+                                Ready to optimize your fleet turnaround?
+                            </h2>
+                            <p class="text-xl text-stone-300 font-medium">
+                                Join hundreds of logistics hubs improving their efficiency today with our automated
+                                turnaround solutions.
+                            </p>
+                            <button
+                                class="mt-4 flex h-20 min-w-[280px] items-center justify-center rounded-2xl bg-[var(--leaf-vibrant)] px-12 text-xl font-black text-[var(--earth-green)] shadow-xl hover:scale-105 active:scale-95 transition-all">
+                                Get Started Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="border-t border-stone-200 bg-stone-100 dark:bg-background-dark py-20 relative z-10">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="flex flex-col items-center justify-between gap-12 md:flex-row">
+                    <div class="flex flex-col items-center md:items-start gap-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--earth-green)] text-[var(--leaf-vibrant)]">
+                                <span class="material-symbols-outlined text-xl">eco</span>
+                            </div>
+                            <span
+                                class="text-xl font-black tracking-tighter text-[var(--earth-green)] dark:text-white uppercase">Truck
+                                Turnaround System</span>
+                        </div>
+                        <p class="text-stone-500 text-sm max-w-xs text-center md:text-left">Building a more efficient
+                            and sustainable logistics future, one gate at a time.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-8">
+                        <div
+                            class="flex gap-10 text-sm font-bold uppercase tracking-widest text-stone-600 dark:text-stone-400">
+                            <a class="hover:text-[var(--leaf-vibrant)] transition-colors" href="#">Privacy Policy</a>
+                            <a class="hover:text-[var(--leaf-vibrant)] transition-colors" href="#">Terms of Service</a>
+                            <a class="hover:text-[var(--leaf-vibrant)] transition-colors" href="#">Contact Support</a>
+                        </div>
+                        <p class="text-xs font-black text-stone-400 tracking-tighter uppercase">© 2024 Truck Turnaround
+                            System. Rooted in efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

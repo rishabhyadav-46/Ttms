@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d5a27", // Soft green signature color for logistics/eco-friendly
+                        "background-light": "#f8faf9", // Very light greenish-grey
+                        "background-dark": "#0f1711",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.75rem",
+                        "xl": "1.25rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Login | Truck Turnaround System</title>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+    <header
+        class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 py-4 bg-white dark:bg-slate-900 shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="p-2 bg-primary rounded-lg text-white">
+                <span class="material-symbols-outlined text-2xl">local_shipping</span>
+            </div>
+            <h1 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">TTS <span
+                    class="text-primary font-medium tracking-normal text-base border-l border-slate-300 dark:border-slate-700 ml-2 pl-2">Truck
+                    Turnaround</span></h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="text-slate-500 hover:text-primary transition-colors text-sm font-semibold flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg">help_outline</span>
+                Support
+            </button>
+        </div>
+    </header>
+    <!-- Main Content Area with Background -->
+    <main class="flex-1 flex items-center justify-center p-6 relative overflow-hidden">
+        <!-- Subtle Logistics-themed background patterns -->
+        <div class="absolute inset-0 z-0 opacity-5 pointer-events-none">
+            <div class="absolute top-20 left-10 transform -rotate-12">
+                <span class="material-symbols-outlined text-[120px]">route</span>
+            </div>
+            <div class="absolute bottom-20 right-10 transform rotate-12">
+                <span class="material-symbols-outlined text-[150px]">hub</span>
+            </div>
+            <div class="absolute top-1/2 left-1/3 opacity-40">
+                <span class="material-symbols-outlined text-[200px]">barcode_scanner</span>
+            </div>
+        </div>
+        <!-- Central Login Card -->
+        <div
+            class="relative z-10 w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-100 dark:border-slate-800 p-8 md:p-10">
+            <div class="flex flex-col items-center mb-8">
+                <div
+                    class="size-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-primary text-3xl">lock_open</span>
+                </div>
+                <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white text-center">Welcome Back</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-center mt-2 text-sm">Secure access for fleet managers
+                    and logistics coordinators</p>
+            </div>
+            <form class="space-y-6">
+                <!-- Email Input -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="email">Email
+                        Address</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-xl">mail</span>
+                        </div>
+                        <input
+                            class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
+                            id="email" name="email" placeholder="name@company.com" type="email" />
+                    </div>
+                </div>
+                <!-- Password Input -->
+                <div class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center ml-1">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300"
+                            for="password">Password</label>
+                        <a class="text-xs font-bold text-primary hover:underline transition-all" href="#">Forgot
+                            password?</a>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-symbols-outlined text-xl">key</span>
+                        </div>
+                        <input
+                            class="block w-full pl-11 pr-12 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
+                            id="password" name="password" placeholder="Enter your password" type="password" />
+                        <button
+                            class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                            type="button">
+                            <span class="material-symbols-outlined text-xl">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Remember Me -->
+                <div class="flex items-center gap-2 px-1">
+                    <input class="w-4 h-4 text-primary border-slate-300 rounded focus:ring-primary transition-colors"
+                        id="remember" type="checkbox" />
+                    <label class="text-sm text-slate-600 dark:text-slate-400 cursor-pointer" for="remember">Keep me
+                        logged in on this device</label>
+                </div>
+                <!-- Log In Button -->
+                <button
+                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
+                    type="submit">
+                    <span>Log in to Dashboard</span>
+                    <span
+                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Secondary Actions -->
+            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                    Don't have an account?
+                    <a class="text-primary font-bold hover:underline" href="signup.html">Sign Up Now</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Area -->
+    <footer class="p-6 text-center">
+        <div class="flex justify-center items-center gap-6 mb-4">
+            <img class="h-8 grayscale opacity-40 hover:opacity-100 transition-opacity"
+                data-alt="Logistics company partner logo silhouette"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdckcdYKSuUqz1utiMd0sSIufogJjf_wN36NPocSfbFD5TKWM_zwjE2bd5HT8Bs4DLLSQUdIu9FJFJls2if3Al3cyBXr5dm1_-Htw03-6LKoqPUNkRTVuGYIiT0H5M1dbx90pePPgniwSW8V76oCz9wiGk3Rk8TCUj02XGlBLxkTGtAee3CCZhcUPPb7m2kETXROE3-iE04ddOIaUma4x3Ie_nrPB3Yhq-ibgTCyfjEToERY3v-sfhwvPPtDUqoeFHfjnUMX2Bheyw" />
+            <img class="h-8 grayscale opacity-40 hover:opacity-100 transition-opacity"
+                data-alt="International shipping certification logo"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjD_CdH-3fAksz5THMT-uniSJLaRmtP9AWR25Tfto_kBYJecvwyylN-9SPt-KVsyf9eZDFo8HuSj2eCxie69ajtNuIqqubYun-dD2cF0s2RKw1agqR7YH6oN0aFw46p_TwAfoekOvOGIoSHo-qORrXsfEKNIkl_cWuPl1y1eJPh8I6Qu9UV4ItCjmVgidLP4RP0_BSBe9Ia74ufWZJ2E9qdg3d03hItIFsOPOy7hLGA1IjA3BVNMbWuqKjjqww0zS-iiha7Ok5EdCp" />
+            <img class="h-8 grayscale opacity-40 hover:opacity-100 transition-opacity"
+                data-alt="Supply chain security seal logo"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmkAwQFHJkKO3mvJeQrHzV74Y8xZFRwcRPFZIKR9x7LqbD0BTtOVwMp-6ognVIEuRmB5N7u2LaXMct3PjqecVAVa52oatcBo5qtEV7WVrWg0UOpGLsUFPT_Rn9FGT0DOUEvtQayNLmOwW4PxKBgcpjI9ab6K4slgbY0_f5XcNT1J5XV-QvUnsSFL_H5yJqiNtE5peFVFvilS517JymSjdx82s7NUlrO1uTGgnSaMgIKgjlOQCscY1Zn14IJFyuSRPUXJFbuUdcMeVU" />
+        </div>
+        <p class="text-xs text-slate-400 dark:text-slate-600 font-medium">
+            © 2024 Truck Turnaround System. All rights reserved. <br class="md:hidden" />
+            <span class="hidden md:inline mx-2">|</span>
+            <a class="hover:text-primary transition-colors" href="#">Security Standards</a>
+            <span class="mx-2">•</span>
+            <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+
+</html>
