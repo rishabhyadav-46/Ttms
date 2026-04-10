@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(cuid())
+  fullName   String
+  companyName String
+  email      String   @unique
+  password   String
+  role       String   @default("operator")
+  
+  gateEntries GateEntry[]
+  logActivities LogActivity[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GateEntry {
+  id            String   @id @default(cuid())
+  gateEntryNo   String  
+  vehicleNumber String
+  vehicleType   String
+  transporter   String
+  inwardType    String
+  location      String
+  reportingTimeDate DateTime
+  inDateTime    DateTime
+  tareWeight    Float
+  status        String   @default("pending")
+  
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  
+  logActivities LogActivity[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LogActivity {
+  id        String    @id @default(cuid())
+  truckId   String
+  driverName String
+  checkIn   DateTime
+  gate      String
+  duration  String
+  status    String
+  
+  gateEntryId String?
+  gateEntry   GateEntry? @relation(fields: [gateEntryId], references: [id])
+  
+  userId  String?
+  user    User?     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+

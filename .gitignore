@@ -1,1 +1,7 @@
-hh.txt
+node_modules
+logs
+.env
+password.txt
+BACKEND_GUIDE.md
+password.txt
+TODO.md

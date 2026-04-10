@@ -60,7 +60,7 @@
                 </a>
 
                 <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
-                    href="report.html">
+href="report"
                     <span class="material-symbols-outlined">analytics</span>
                     <span class="font-medium">Reports</span>
                 </a>
@@ -90,9 +90,10 @@
             </header>
             <div class="p-8 max-w-5xl mx-auto">
                 <!-- Form Container -->
+                <div id="entryMessage" class="mb-4 p-3 rounded-lg hidden"></div>
                 <div
                     class="bg-white dark:bg-slate-900 rounded-xl form-shadow p-8 border border-slate-100 dark:border-slate-800">
-                    <form class="space-y-8">
+                    <form id="entryForm" class="space-y-8">
                         <!-- Section: Basic Information -->
                         <div>
                             <div
@@ -106,22 +107,22 @@
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Gate Entry
                                         No.</label>
-                                    <input
+                                    <input name="gateEntryNo"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="GE-2024-001" type="text" />
+                                        placeholder="GE-2024-001" type="text" required />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle
                                         Number</label>
-                                    <input
+                                    <input name="vehicleNumber"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="e.g. MH 12 AB 1234" type="text" />
+                                        placeholder="e.g. MH 12 AB 1234" type="text" required />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle
                                         Type</label>
-                                    <select
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11">
+                                    <select name="vehicleType"
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" required>
                                         <option>Select type</option>
                                         <option>6-Wheeler Truck</option>
                                         <option>10-Wheeler Truck</option>
@@ -144,15 +145,15 @@
                                 <div class="lg:col-span-2 space-y-2">
                                     <label
                                         class="text-sm font-semibold text-slate-700 dark:text-slate-300">Transporter</label>
-                                    <input
+                                    <input name="transporter"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="Search transporter name..." type="text" />
+                                        placeholder="Search transporter name..." type="text" required />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Inward
                                         Type</label>
-                                    <select
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11">
+                                    <select name="inwardType"
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" required>
                                         <option>Raw Material</option>
                                         <option>Finished Goods</option>
                                         <option>Others</option>
@@ -161,9 +162,9 @@
                                 <div class="space-y-2">
                                     <label
                                         class="text-sm font-semibold text-slate-700 dark:text-slate-300">Location</label>
-                                    <input
+                                    <input name="location"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="Bay / Yard No." type="text" />
+                                        placeholder="Bay / Yard No." type="text" required />
                                 </div>
                             </div>
                         </div>
@@ -181,14 +182,14 @@
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Reporting
                                         Time &amp; Date</label>
-                                    <input
+                                    <input name="reportingTimeDate"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        type="datetime-local" />
+                                        type="datetime-local" required />
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">In Date
                                         &amp; Time</label>
-                                    <input
+                                    <input name="inDateTime"
                                         class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
                                         type="datetime-local" />
                                 </div>
@@ -196,9 +197,9 @@
                                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tare Weight
                                         (KG)</label>
                                     <div class="relative">
-                                        <input
+                                        <input name="tareWeight"
                                             class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11 pr-12"
-                                            placeholder="0.00" type="number" />
+                                            placeholder="0.00" type="number" step="0.01" />
                                         <span
                                             class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">KG</span>
                                     </div>
@@ -214,7 +215,7 @@
                                 <span class="material-symbols-outlined text-lg">restart_alt</span>
                                 Reset Form
                             </button>
-                            <button
+                            <button id="submitBtn"
                                 class="px-10 py-2.5 rounded-lg bg-accent-green text-white font-semibold text-sm hover:bg-green-600 shadow-lg shadow-accent-green/20 transition-all flex items-center gap-2"
                                 type="submit">
                                 <span class="material-symbols-outlined text-lg">check_circle</span>
@@ -262,5 +263,65 @@
         </main>
     </div>
 </body>
+
+<script>
+    const token = localStorage.getItem('token');
+    if (!token) {
+        window.location.href = '/loginpage';
+    }
+
+    document.getElementById('entryForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('submitBtn');
+        const messageDiv = document.getElementById('entryMessage');
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> Submitting...';
+        
+        const formData = {
+            gateEntryNo: document.querySelector('[name="gateEntryNo"]').value,
+            vehicleNumber: document.querySelector('[name="vehicleNumber"]').value,
+            vehicleType: document.querySelector('[name="vehicleType"]').value,
+            transporter: document.querySelector('[name="transporter"]').value,
+            inwardType: document.querySelector('[name="inwardType"]').value,
+            location: document.querySelector('[name="location"]').value,
+            reportingTimeDate: document.querySelector('[name="reportingTimeDate"]').value,
+            inDateTime: document.querySelector('[name="inDateTime"]').value || null,
+            tareWeight: document.querySelector('[name="tareWeight"]').value
+        };
+
+        try {
+            const response = await fetch('/api/gate-entries', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                messageDiv.className = 'mb-4 p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300';
+                messageDiv.textContent = '✅ Gate entry submitted successfully!';
+                messageDiv.classList.remove('hidden');
+                document.getElementById('entryForm').reset();
+                setTimeout(() => messageDiv.classList.add('hidden'), 3000);
+            } else {
+                messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
+                messageDiv.textContent = '❌ Error: ' + data.error;
+                messageDiv.classList.remove('hidden');
+            }
+        } catch (error) {
+            messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
+            messageDiv.textContent = '❌ Error: ' + error.message;
+            messageDiv.classList.remove('hidden');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span>Submit Entry';
+        }
+    });
+</script>
 
 </html>

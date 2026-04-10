@@ -49,7 +49,7 @@
             <div class="p-2 bg-primary rounded-lg text-white">
                 <span class="material-symbols-outlined text-2xl">local_shipping</span>
             </div>
-            <h1 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight">TTS <span
+            <h1 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight"><a href="/">TTS</a> <span
                     class="text-primary font-medium tracking-normal text-base border-l border-slate-300 dark:border-slate-700 ml-2 pl-2">Truck
                     Turnaround</span></h1>
         </div>
@@ -87,7 +87,8 @@
                 <p class="text-slate-500 dark:text-slate-400 text-center mt-2 text-sm">Secure access for fleet managers
                     and logistics coordinators</p>
             </div>
-            <form class="space-y-6">
+            <div id="loginMessage" class="mb-4 p-3 rounded-lg hidden"></div>
+            <form id="loginForm" class="space-y-6">
                 <!-- Email Input -->
                 <div class="flex flex-col gap-2">
                     <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1" for="email">Email
@@ -99,7 +100,7 @@
                         </div>
                         <input
                             class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
-                            id="email" name="email" placeholder="name@company.com" type="email" />
+                            id="email" name="email" placeholder="name@company.com" type="email" required />
                     </div>
                 </div>
                 <!-- Password Input -->
@@ -117,7 +118,7 @@
                         </div>
                         <input
                             class="block w-full pl-11 pr-12 py-3.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-base"
-                            id="password" name="password" placeholder="Enter your password" type="password" />
+                            id="password" name="password" placeholder="Enter your password" type="password" required />
                         <button
                             class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
                             type="button">
@@ -135,7 +136,7 @@
                 <!-- Log In Button -->
                 <button
                     class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
-                    type="submit">
+                    type="submit" id="loginBtn">
                     <span>Log in to Dashboard</span>
                     <span
                         class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
@@ -144,8 +145,10 @@
             <!-- Secondary Actions -->
             <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
                 <p class="text-sm text-slate-500 dark:text-slate-400">
-                    Don't have an account?
-                    <a class="text-primary font-bold hover:underline" href="signup.html">Sign Up Now</a>
+                    Don't have an account?<a class="text-primary font-bold hover:underline"
+
+                        href="signup">SignUp
+                    </a>
                 </p>
             </div>
         </div>
@@ -172,5 +175,51 @@
         </p>
     </footer>
 </body>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const loginBtn = document.getElementById('loginBtn');
+        const messageDiv = document.getElementById('loginMessage');
+        
+        loginBtn.disabled = true;
+        loginBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> Logging In...';
+        
+        const formData = {
+            email: document.querySelector('[name="email"]').value,
+            password: document.querySelector('[name="password"]').value
+        };
+
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                messageDiv.className = 'mb-4 p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300';
+                messageDiv.textContent = '✅ Login successful! Redirecting...';
+                messageDiv.classList.remove('hidden');
+                setTimeout(() => window.location.href = '/entrydetails', 2000);
+            } else {
+                messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
+                messageDiv.textContent = '❌ Error: ' + data.error;
+                messageDiv.classList.remove('hidden');
+            }
+        } catch (error) {
+            messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
+            messageDiv.textContent = '❌ Error: ' + error.message;
+            messageDiv.classList.remove('hidden');
+        } finally {
+            loginBtn.disabled = false;
+            loginBtn.innerHTML = '<span>Log in to Dashboard</span><span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>';
+        }
+    });
+</script>
 
 </html>
