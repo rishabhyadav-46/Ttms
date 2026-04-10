@@ -465,8 +465,9 @@ href="entrydetails"
         window.location.href = '/loginpage';
     }
 
-    async function loadDashboardData() {
+async function loadDashboardData() {
         try {
+            console.log('🔄 Fetching dashboard data...');
             const response = await fetch('/api/reports/dashboard', {
                 method: 'GET',
                 headers: {
@@ -475,39 +476,76 @@ href="entrydetails"
             });
 
             const data = await response.json();
+            console.log('📊 Raw API response:', data);
 
-            if (response.ok) {
-                // Update KPIs - Find existing elements
-                const totalEl = document.querySelector('[role="main"] .grid .grid > div:nth-child(1)');
-                const pendingEl = document.querySelector('[role="main"] .grid .grid > div:nth-child(2)');
-                const completedEl = document.querySelector('[role="main"] .grid .grid > div:nth-child(3)');
-                const avgEl = document.querySelector('[role="main"] .grid .grid > div:nth-child(4)');
+            if (response.ok && data.summary) {
+                // ✅ FIXED: Use direct ID selectors matching HTML
+                const totalEl = document.getElementById('totalEntries');
+                const pendingEl = document.getElementById('pendingEntries');
+                const completedEl = document.getElementById('completedEntries');
+                const avgEl = document.getElementById('avgTurnaround');
+
+                if (totalEl) totalEl.textContent = data.summary.totalEntries || 0;
+                else console.warn('⚠️ totalEntries element not found');
+
+                if (pendingEl) pendingEl.textContent = data.summary.pendingEntries || 0;
+                else console.warn('⚠️ pendingEntries element not found');
+
+                if (completedEl) completedEl.textContent = data.summary.completedEntries || 0;
+                else console.warn('⚠️ completedEntries element not found');
+
+                if (avgEl) avgEl.textContent = data.summary.avgTurnaroundTime || '0.00';
+                else console.warn('⚠️ avgTurnaround element not found');
+
+                console.log('✅ Dashboard KPIs updated');
                 
-                if (totalEl) {
-                    const totalNum = totalEl.querySelector('p:last-child');
-                    if (totalNum) totalNum.textContent = data.summary.totalEntries;
+                // ✅ Populate Recent Entries Table
+                if (data.recentEntries && data.recentEntries.length > 0) {
+                    const tableBody = document.getElementById('recentEntriesTable');
+                    tableBody.innerHTML = ''; // Clear loading state
+                    
+                    data.recentEntries.slice(0, 10).forEach(entry => {
+                        const statusClass = entry.status === 'completed' ? 'bg-emerald-100 text-emerald-700' :
+                                          entry.status === 'pending' ? 'bg-orange-100 text-orange-700' :
+                                          'bg-slate-100 text-slate-700';
+                        
+                        const row = `
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                                <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">${entry.gateEntryNo}</td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleNumber}</td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleType}</td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.transporter}</td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide ${statusClass} dark:bg-opacity-30">
+                                        ${entry.status}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
+                                    ${new Date(entry.createdAt).toLocaleDateString()}
+                                </td>
+                            </tr>
+                        `;
+                        tableBody.innerHTML += row;
+                    });
+                    console.log(`✅ Table populated with ${data.recentEntries.length} recent entries`);
+                } else {
+                    console.log('ℹ️ No recent entries to display');
                 }
-                if (pendingEl) {
-                    const pendingNum = pendingEl.querySelector('p:last-child');
-                    if (pendingNum) pendingNum.textContent = data.summary.pendingEntries;
-                }
-                if (completedEl) {
-                    const completedNum = completedEl.querySelector('p:last-child');
-                    if (completedNum) completedNum.textContent = data.summary.completedEntries;
-                }
-                if (avgEl) {
-                    const avgNum = avgEl.querySelector('p:last-child');
-                    if (avgNum) avgNum.textContent = data.summary.avgTurnaroundTime || '0.00';
-                }
+                
             } else {
-                console.error('Error loading data:', data.error);
+                console.error('❌ API failed:', data?.error || 'No summary data');
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('❌ Fetch error:', error);
         }
     }
 
-    loadDashboardData();
+    // Wait for DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadDashboardData);
+    } else {
+        loadDashboardData();
+    }
 </script>
 
 </html>

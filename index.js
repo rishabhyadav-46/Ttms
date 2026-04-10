@@ -235,13 +235,9 @@ app.post('/api/gate-entries', verifyToken, async (req, res) => {
       return res.status(400).json({ error: 'All required fields must be filled' });
     }
 
-    // Check for duplicate gate entry number
-    const existingEntry = await prisma.gateEntry.findUnique({
-      where: { gateEntryNo }
-    });
-    if (existingEntry) {
-      return res.status(400).json({ error: 'Gate Entry number already exists' });
-    }
+// Duplicate gateEntryNo check removed per request
+    // const existingEntry = await prisma.gateEntry.findUnique({ where: { gateEntryNo } });
+    // if (existingEntry) return res.status(400).json({ error: 'Gate Entry number already exists' });
 
     // Create gate entry
     const newEntry = await prisma.gateEntry.create({
