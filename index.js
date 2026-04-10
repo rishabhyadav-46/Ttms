@@ -97,13 +97,6 @@ app.get('/report', (req, res) => {
 
 // ============== AUTHENTICATION ROUTES ==============
 
-// Debug endpoint
-app.post('/api/test-post', (req, res) => {
-  log('✅ POST request received at /api/test-post');
-  log('Body: ' + JSON.stringify(req.body));
-  res.json({ message: 'POST received', body: req.body });
-});
-
 // Signup
 app.post('/api/auth/signup', async (req, res) => {
   try {
@@ -235,10 +228,6 @@ app.post('/api/gate-entries', verifyToken, async (req, res) => {
       return res.status(400).json({ error: 'All required fields must be filled' });
     }
 
-// Duplicate gateEntryNo check removed per request
-    // const existingEntry = await prisma.gateEntry.findUnique({ where: { gateEntryNo } });
-    // if (existingEntry) return res.status(400).json({ error: 'Gate Entry number already exists' });
-
     // Create gate entry
     const newEntry = await prisma.gateEntry.create({
       data: {
@@ -251,7 +240,7 @@ app.post('/api/gate-entries', verifyToken, async (req, res) => {
         reportingTimeDate: reportingTimeDate ? new Date(reportingTimeDate) : new Date(),
         inDateTime: inDateTime ? new Date(inDateTime) : null,
         tareWeight: parseFloat(tareWeight) || 0,
-        status: 'pending',
+        status: 'completed',
         userId: req.userId
       }
     });
@@ -466,27 +455,7 @@ app.get('/api/reports/detailed', verifyToken, async (req, res) => {
   }
 });
 
-// ============== TEST & UTILITY ROUTES ==============
-// Test models route
-app.get('/test-models', async (req, res) => {
-  try {
-    const testUser = await prisma.user.create({
-      data: {
-        fullName: 'Test User',
-        companyName: 'Test Corp',
-        email: `test${Date.now()}@supabase.co`,
-        password: 'password123',
-        role: 'operator'
-      }
-    });
-    res.json({
-      message: '✅ Supabase PostgreSQL + Prisma connected successfully!',
-      userId: testUser.id
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+// ============== UTILITY ROUTES ==============
 
 // Server startup
 app.listen(PORT, () => {
