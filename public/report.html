@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Truck Turnaround System - Reports &amp; Analytics</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -26,9 +18,7 @@
                         "background-light": "#f6f7f7",
                         "background-dark": "#15191d",
                     },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
@@ -38,66 +28,57 @@
 
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
     <div class="flex h-screen overflow-hidden">
+
         <!-- Side Navigation -->
         <aside class="w-64 flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800">
-            <div class="p-6 flex items-center gap-3">
+            <div class="p-6 flex items-center gap-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
                     <span class="material-symbols-outlined">local_shipping</span>
                 </div>
-                <div>
-                    <h1 class="text-lg font-bold tracking-tight text-primary dark:text-slate-100 mb-5 leading-none">TTS Admin
-                    </h1>
-                    
-                </div>
+                <h1 class="text-lg font-bold tracking-tight text-primary dark:text-slate-100 leading-none">TTS Admin</h1>
             </div>
-            <nav class="flex-1 px-4 space-y-1">
-                
-                <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
-href="entrydetails"></a>
-                     <!-- <span class="material-symbols-outlined">gate</span> -->
+            <nav class="flex-1 px-4 py-4 space-y-1">
+                <a href="/entrydetails" class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">gate</span>
                     <span class="text-sm font-medium">Gate Entry</span>
                 </a>
-                <a class="flex items-center gap-3 px-3 py-2.5 bg-accent-sage/10 text-accent-sage rounded-lg transition-colors"
-                    href="#">
-                    <!-- <span class="material-symbols-outlined">analytics</span> -->
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 bg-accent-sage/10 text-accent-sage rounded-lg transition-colors">
+                    <span class="material-symbols-outlined">analytics</span>
                     <span class="text-sm font-bold">Reports</span>
                 </a>
-                
-                
             </nav>
             <div class="p-4 border-t border-slate-200 dark:border-slate-800">
-                <button
-                    class="w-full py-2.5 px-4 bg-primary text-white text-sm font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
+                <button class="w-full py-2.5 px-4 bg-primary text-white text-sm font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
                     <span class="material-symbols-outlined text-sm">download</span>
                     Export System Data
                 </button>
             </div>
         </aside>
+
         <!-- Main Content -->
         <main class="flex-1 overflow-y-auto scroll-smooth">
+
             <!-- Header -->
-            <header
-                class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between">
+            <header class="sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between">
                 <div>
                     <h2 class="text-2xl font-bold text-primary dark:text-slate-100">Analytics Dashboard</h2>
                     <p class="text-sm text-slate-500">Real-time performance metrics and logistics insights</p>
                 </div>
                 <div class="flex items-center gap-4">
-                    <div
-                        class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-slate-200 dark:border-slate-700">
+                    <div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-slate-200 dark:border-slate-700">
                         <span class="material-symbols-outlined text-slate-400 mr-2">calendar_today</span>
-                        <select
-                            class="bg-transparent border-none text-sm font-medium focus:ring-0 p-0 text-slate-700 dark:text-slate-300">
+                        <select class="bg-transparent border-none text-sm font-medium focus:ring-0 p-0 text-slate-700 dark:text-slate-300">
                             <option>Last 7 Days</option>
                             <option>Last 30 Days</option>
                             <option>Custom Range</option>
                         </select>
                     </div>
-                    
                 </div>
             </header>
+
             <div class="p-8 space-y-8">
-                <!-- KPI Summary Section -->
+
+                <!-- KPI Summary -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
                         <div class="flex items-center justify-between">
@@ -108,7 +89,6 @@ href="entrydetails"></a>
                             <span class="material-symbols-outlined text-4xl text-blue-500/20">logout</span>
                         </div>
                     </div>
-
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
                         <div class="flex items-center justify-between">
                             <div>
@@ -118,7 +98,6 @@ href="entrydetails"></a>
                             <span class="material-symbols-outlined text-4xl text-orange-500/20">timer</span>
                         </div>
                     </div>
-
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
                         <div class="flex items-center justify-between">
                             <div>
@@ -128,7 +107,6 @@ href="entrydetails"></a>
                             <span class="material-symbols-outlined text-4xl text-green-500/20">check_circle</span>
                         </div>
                     </div>
-
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
                         <div class="flex items-center justify-between">
                             <div>
@@ -141,7 +119,7 @@ href="entrydetails"></a>
                     </div>
                 </div>
 
-                <!-- Recent Entries Table -->
+                <!-- Recent Entries Table (API-driven) -->
                 <div class="bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
                     <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
                         <h3 class="text-lg font-bold text-primary dark:text-slate-100">Recent Gate Entries</h3>
@@ -166,386 +144,276 @@ href="entrydetails"></a>
                         </table>
                     </div>
                 </div>
-            </div>
+
+                <!-- Performance KPI Cards -->
                 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="p-2 bg-accent-sage/10 rounded-lg text-accent-sage">
                                 <span class="material-symbols-outlined">timer</span>
                             </div>
-                            <span class="text-red-500 text-xs font-bold flex items-center">-2.5% <span
-                                    class="material-symbols-outlined text-xs">trending_down</span></span>
+                            <span class="text-red-500 text-xs font-bold flex items-center">-2.5% <span class="material-symbols-outlined text-xs">trending_down</span></span>
                         </div>
                         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Avg. Turnaround Time</p>
                         <p class="text-2xl font-black text-primary dark:text-slate-100">24m 15s</p>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="p-2 bg-blue-500/10 rounded-lg text-blue-500">
                                 <span class="material-symbols-outlined">local_shipping</span>
                             </div>
-                            <span class="text-emerald-500 text-xs font-bold flex items-center">+12% <span
-                                    class="material-symbols-outlined text-xs">trending_up</span></span>
+                            <span class="text-emerald-500 text-xs font-bold flex items-center">+12% <span class="material-symbols-outlined text-xs">trending_up</span></span>
                         </div>
                         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Daily Truck Volume</p>
                         <p class="text-2xl font-black text-primary dark:text-slate-100">1,284</p>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
                         <div class="flex justify-between items-start mb-4">
                             <div class="p-2 bg-amber-500/10 rounded-lg text-amber-500">
                                 <span class="material-symbols-outlined">fact_check</span>
                             </div>
-                            <span class="text-red-500 text-xs font-bold flex items-center">-0.8% <span
-                                    class="material-symbols-outlined text-xs">trending_down</span></span>
+                            <span class="text-red-500 text-xs font-bold flex items-center">-0.8% <span class="material-symbols-outlined text-xs">trending_down</span></span>
                         </div>
                         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Gate Efficiency %</p>
                         <p class="text-2xl font-black text-primary dark:text-slate-100">94.2%</p>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-red-500">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-red-500">
                         <div class="flex justify-between items-start mb-4">
                             <div class="p-2 bg-red-500/10 rounded-lg text-red-500">
                                 <span class="material-symbols-outlined">warning</span>
                             </div>
-                            <span class="text-emerald-500 text-xs font-bold flex items-center">+3% <span
-                                    class="material-symbols-outlined text-xs">trending_up</span></span>
+                            <span class="text-emerald-500 text-xs font-bold flex items-center">+3% <span class="material-symbols-outlined text-xs">trending_up</span></span>
                         </div>
                         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Active Alerts</p>
                         <p class="text-2xl font-black text-primary dark:text-slate-100">12</p>
                     </div>
                 </section>
+
                 <!-- Charts Section -->
                 <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
                         <div class="flex items-center justify-between mb-8">
                             <h3 class="text-lg font-bold text-primary dark:text-slate-100">Turnaround Trends</h3>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 items-center">
                                 <span class="w-3 h-3 rounded-full bg-accent-sage inline-block"></span>
                                 <span class="text-xs font-medium text-slate-500">Target: 20m</span>
                             </div>
                         </div>
-                        <div class="h-64 flex items-end justify-between gap-2 px-4 relative">
-                            <!-- Mock Line Chart Path -->
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                                <svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
-                                    <path class="text-accent-sage" d="M0,80 Q25,20 50,50 T100,30" fill="none"
-                                        stroke="currentColor" stroke-width="2"></path>
+                        <div class="h-64 flex items-end justify-between gap-2 px-4 pb-8 relative">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                                <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                    <path d="M0,80 Q25,20 50,50 T100,30" fill="none" stroke="#7c9a92" stroke-width="2" />
                                 </svg>
                             </div>
-                            <!-- Bar placeholders for data visualization feel -->
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[40%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Mon</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[65%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Tue</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[50%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-40 h-full rounded-t transition-all group-hover:opacity-60">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Wed</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[80%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Thu</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[30%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Fri</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[45%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Sat</span>
-                            </div>
-                            <div class="flex-1 bg-slate-50 dark:bg-slate-800 rounded-t h-[55%] group relative">
-                                <div
-                                    class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40">
-                                </div>
-                                <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Sun</span>
-                            </div>
+                            <!-- Bar chart: Mon–Sun -->
+                            <div class="flex-1 relative group h-[40%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Mon</span></div>
+                            <div class="flex-1 relative group h-[65%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Tue</span></div>
+                            <div class="flex-1 relative group h-[50%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-40 h-full rounded-t transition-all group-hover:opacity-60"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Wed</span></div>
+                            <div class="flex-1 relative group h-[80%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Thu</span></div>
+                            <div class="flex-1 relative group h-[30%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Fri</span></div>
+                            <div class="flex-1 relative group h-[45%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Sat</span></div>
+                            <div class="flex-1 relative group h-[55%]"><div class="absolute inset-x-0 bottom-0 bg-accent-sage opacity-20 h-full rounded-t transition-all group-hover:opacity-40"></div><span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-medium">Sun</span></div>
                         </div>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
                         <div class="flex items-center justify-between mb-8">
-                            <h3 class="text-lg font-bold text-primary dark:text-slate-100">Hourly Traffic Distribution
-                            </h3>
+                            <h3 class="text-lg font-bold text-primary dark:text-slate-100">Hourly Traffic Distribution</h3>
                             <button class="text-xs font-bold text-accent-sage hover:underline">View Heatmap</button>
                         </div>
                         <div class="space-y-4">
                             <div class="space-y-1">
-                                <div
-                                    class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                                    <span>Peak (08:00 - 11:00)</span>
-                                    <span>420 Trucks</span>
+                                <div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                                    <span>Peak (08:00 - 11:00)</span><span>420 Trucks</span>
                                 </div>
                                 <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                                     <div class="h-full bg-primary rounded-full" style="width: 85%"></div>
                                 </div>
                             </div>
                             <div class="space-y-1">
-                                <div
-                                    class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                                    <span>Midday (11:00 - 15:00)</span>
-                                    <span>280 Trucks</span>
+                                <div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                                    <span>Midday (11:00 - 15:00)</span><span>280 Trucks</span>
                                 </div>
                                 <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                                     <div class="h-full bg-accent-sage rounded-full" style="width: 60%"></div>
                                 </div>
                             </div>
                             <div class="space-y-1">
-                                <div
-                                    class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                                    <span>Evening (15:00 - 19:00)</span>
-                                    <span>315 Trucks</span>
+                                <div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                                    <span>Evening (15:00 - 19:00)</span><span>315 Trucks</span>
                                 </div>
                                 <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                                     <div class="h-full bg-accent-sage rounded-full" style="width: 68%"></div>
                                 </div>
                             </div>
                             <div class="space-y-1">
-                                <div
-                                    class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-                                    <span>Night (19:00 - 08:00)</span>
-                                    <span>110 Trucks</span>
+                                <div class="flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                                    <span>Night (19:00 - 08:00)</span><span>110 Trucks</span>
                                 </div>
                                 <div class="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-slate-300 dark:bg-slate-600 rounded-full" style="width: 25%">
-                                    </div>
+                                    <div class="h-full bg-slate-300 dark:bg-slate-600 rounded-full" style="width: 25%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <!-- Activity Table -->
-                <section
-                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <div
-                        class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <section class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <h3 class="text-lg font-bold text-primary dark:text-slate-100">Recent Log Activity</h3>
                         <div class="flex gap-2">
-                            <button
-                                class="text-sm font-medium px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 flex items-center gap-2 border border-slate-200 dark:border-slate-700">
-                                <span class="material-symbols-outlined text-sm">filter_list</span>
-                                Filter
+                            <button class="text-sm font-medium px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 flex items-center gap-2 border border-slate-200 dark:border-slate-700">
+                                <span class="material-symbols-outlined text-sm">filter_list</span>Filter
                             </button>
-                            <button
-                                class="text-sm font-medium px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 flex items-center gap-2 border border-slate-200 dark:border-slate-700">
-                                <span class="material-symbols-outlined text-sm">download</span>
-                                CSV
+                            <button class="text-sm font-medium px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-300 flex items-center gap-2 border border-slate-200 dark:border-slate-700">
+                                <span class="material-symbols-outlined text-sm">download</span>CSV
                             </button>
                         </div>
                     </div>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left">
+                        <table class="w-full text-left text-sm">
                             <thead class="bg-slate-50 dark:bg-slate-800/50">
                                 <tr>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                        Truck ID</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                        Driver Name</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                        Check-In</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Gate
-                                    </th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                        Duration</th>
-                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                                        Status</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Truck ID</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Driver Name</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Check-In</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Gate</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Duration</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">#TRK-8842
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Rohit Kalal</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">10:45 AM</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Gate A-12</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">18m 20s</td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Completed</span>
-                                    </td>
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-slate-200">#TRK-8842</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Rohit Kalal</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">10:45 AM</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Gate A-12</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">18m 20s</td>
+                                    <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">Completed</span></td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">#TRK-9012
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Salman Yadav</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">11:02 AM</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Gate B-04</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">12m 45s</td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">In
-                                            Progress</span>
-                                    </td>
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-slate-200">#TRK-9012</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Salman Yadav</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">11:02 AM</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Gate B-04</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">12m 45s</td>
+                                    <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">In Progress</span></td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">#TRK-7721
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Deepak Yadav</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">11:15 AM</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Gate A-02</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">45m 10s</td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">Delayed</span>
-                                    </td>
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-slate-200">#TRK-7721</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Deepak Yadav</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">11:15 AM</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Gate A-02</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">45m 10s</td>
+                                    <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">Delayed</span></td>
                                 </tr>
                                 <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                    <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">#TRK-6650
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400"> Vicky Kausal
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">11:30 AM</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Gate C-01</td>
-                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">5m 30s</td>
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">In
-                                            Progress</span>
-                                    </td>
+                                    <td class="px-6 py-4 font-bold text-primary dark:text-slate-200">#TRK-6650</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Vicky Kausal</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">11:30 AM</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">Gate C-01</td>
+                                    <td class="px-6 py-4 text-slate-600 dark:text-slate-400">5m 30s</td>
+                                    <td class="px-6 py-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">In Progress</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div
-                        class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                    <div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <p class="text-xs font-medium text-slate-500">Showing 1 to 4 of 248 entries</p>
                         <div class="flex gap-2">
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary">
+                            <button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-sm">chevron_left</span>
                             </button>
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">1</button>
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-primary text-xs font-bold">2</button>
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-primary text-xs font-bold">3</button>
-                            <button
-                                class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary">
+                            <button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">1</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-primary text-xs font-bold">2</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-primary text-xs font-bold">3</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-sm">chevron_right</span>
                             </button>
                         </div>
                     </div>
                 </section>
+
             </div>
         </main>
     </div>
-</body>
 
-<script>
-    const token = localStorage.getItem('token');
-    if (!token) {
-        window.location.href = '/loginpage';
-    }
-
-async function loadDashboardData() {
-        try {
-            console.log('🔄 Fetching dashboard data...');
-            const response = await fetch('/api/reports/dashboard', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-
-            const data = await response.json();
-            console.log('📊 Raw API response:', data);
-
-            if (response.ok && data.summary) {
-                // ✅ FIXED: Use direct ID selectors matching HTML
-                const totalEl = document.getElementById('totalEntries');
-                const pendingEl = document.getElementById('pendingEntries');
-                const completedEl = document.getElementById('completedEntries');
-                const avgEl = document.getElementById('avgTurnaround');
-
-                if (totalEl) totalEl.textContent = data.summary.totalEntries || 0;
-                else console.warn('⚠️ totalEntries element not found');
-
-                if (pendingEl) pendingEl.textContent = data.summary.pendingEntries || 0;
-                else console.warn('⚠️ pendingEntries element not found');
-
-                if (completedEl) completedEl.textContent = data.summary.completedEntries || 0;
-                else console.warn('⚠️ completedEntries element not found');
-
-                if (avgEl) avgEl.textContent = data.summary.avgTurnaroundTime || '0.00';
-                else console.warn('⚠️ avgTurnaround element not found');
-
-                console.log('✅ Dashboard KPIs updated');
-                
-                // ✅ Populate Recent Entries Table
-                if (data.recentEntries && data.recentEntries.length > 0) {
-                    const tableBody = document.getElementById('recentEntriesTable');
-                    tableBody.innerHTML = ''; // Clear loading state
-                    
-                    data.recentEntries.slice(0, 10).forEach(entry => {
-                        const statusClass = entry.status === 'completed' ? 'bg-emerald-100 text-emerald-700' :
-                                          entry.status === 'pending' ? 'bg-orange-100 text-orange-700' :
-                                          'bg-slate-100 text-slate-700';
-                        
-                        const row = `
-                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                                <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">${entry.gateEntryNo}</td>
-                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleNumber}</td>
-                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleType}</td>
-                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.transporter}</td>
-                                <td class="px-6 py-4">
-                                    <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide ${statusClass} dark:bg-opacity-30">
-                                        ${entry.status}
-                                    </span>
-                                </td>
-                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
-                                    ${new Date(entry.createdAt).toLocaleDateString()}
-                                </td>
-                            </tr>
-                        `;
-                        tableBody.innerHTML += row;
-                    });
-                    console.log(`✅ Table populated with ${data.recentEntries.length} recent entries`);
-                } else {
-                    console.log('ℹ️ No recent entries to display');
-                }
-                
-            } else {
-                console.error('❌ API failed:', data?.error || 'No summary data');
-            }
-        } catch (error) {
-            console.error('❌ Fetch error:', error);
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/loginpage';
         }
-    }
 
-    // Wait for DOM ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadDashboardData);
-    } else {
-        loadDashboardData();
-    }
-</script>
+        const STATUS_CLASSES = {
+            completed: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+            pending:   'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+        };
 
+        function getStatusClass(status) {
+            return STATUS_CLASSES[status] ?? 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
+        }
+
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('/api/reports/dashboard', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                const data = await response.json();
+
+                if (!response.ok || !data.summary) {
+                    console.error('API error:', data?.error || 'No summary data');
+                    return;
+                }
+
+                const { totalEntries, pendingEntries, completedEntries, avgTurnaroundTime } = data.summary;
+                document.getElementById('totalEntries').textContent    = totalEntries    ?? 0;
+                document.getElementById('pendingEntries').textContent  = pendingEntries  ?? 0;
+                document.getElementById('completedEntries').textContent = completedEntries ?? 0;
+                document.getElementById('avgTurnaround').textContent   = avgTurnaroundTime ?? '0.00';
+
+                const tableBody = document.getElementById('recentEntriesTable');
+                const entries = data.recentEntries?.slice(0, 10) ?? [];
+
+                if (entries.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="6" class="px-6 py-4 text-center text-slate-500">No entries found.</td></tr>';
+                    return;
+                }
+
+                const fragment = document.createDocumentFragment();
+                entries.forEach(entry => {
+                    const tr = document.createElement('tr');
+                    tr.className = 'hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors';
+                    tr.innerHTML = `
+                        <td class="px-6 py-4 text-sm font-bold text-primary dark:text-slate-200">${entry.gateEntryNo}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleNumber}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.vehicleType}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${entry.transporter}</td>
+                        <td class="px-6 py-4">
+                            <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide ${getStatusClass(entry.status)}">
+                                ${entry.status}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">
+                            ${new Date(entry.createdAt).toLocaleDateString()}
+                        </td>
+                    `;
+                    fragment.appendChild(tr);
+                });
+
+                tableBody.replaceChildren(fragment);
+
+            } catch (error) {
+                console.error('Dashboard fetch error:', error);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadDashboardData);
+        } else {
+            loadDashboardData();
+        }
+    </script>
+</body>
 </html>
