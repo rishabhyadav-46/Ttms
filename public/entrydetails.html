@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Gate Entry Details - Truck Turnaround System</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -26,23 +18,17 @@
                         "background-light": "#f6f7f7",
                         "background-dark": "#15191d",
                     },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-    <style>
-        .form-shadow {
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-        }
-    </style>
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
     <div class="flex h-screen overflow-hidden">
+
         <!-- Sidebar Navigation -->
         <aside class="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
             <div class="p-6 flex items-center gap-3 border-b border-slate-100 dark:border-slate-800">
@@ -52,23 +38,18 @@
                 <h1 class="font-bold text-xl tracking-tight">TTS Admin</h1>
             </div>
             <nav class="flex-1 p-4 space-y-2">
-
-                <a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary dark:text-white rounded-lg border-l-4 border-accent-green"
-                    href="#">
-                    <span class="material-symbols-outlined text-accent-green">door_front</span>
-                    <span class="font-medium">Gate Entry</span>
+                <a href="#" class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary dark:text-white rounded-lg border-l-4 border-accent-green">
+                    <span class="material-symbols-outlined">gate</span>
+                    <span class="text-sm font-medium">Gate Entry</span>
                 </a>
-
-                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
-href="report"
+                <a href="/report" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
                     <span class="material-symbols-outlined">analytics</span>
-                    <span class="font-medium">Reports</span>
+                    <span class="text-sm font-medium">Reports</span>
                 </a>
             </nav>
             <div class="p-4 mt-auto border-t border-slate-100 dark:border-slate-800">
                 <div class="flex items-center gap-3 px-2">
-                    <div
-                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
                         <span class="material-symbols-outlined text-slate-500">person</span>
                     </div>
                     <div>
@@ -78,52 +59,49 @@ href="report"
                 </div>
             </div>
         </aside>
+
         <!-- Main Content Area -->
         <main class="flex-1 overflow-y-auto">
+
             <!-- Top Navbar -->
-            <header
-                class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+            <header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
                 <div>
                     <h2 class="text-lg font-bold">New Gate Entry</h2>
                     <p class="text-sm text-slate-500">Record truck arrival details for logistics tracking</p>
                 </div>
             </header>
+
             <div class="p-8 max-w-5xl mx-auto">
-                <!-- Form Container -->
+
+                <!-- Status Message -->
                 <div id="entryMessage" class="mb-4 p-3 rounded-lg hidden"></div>
-                <div
-                    class="bg-white dark:bg-slate-900 rounded-xl form-shadow p-8 border border-slate-100 dark:border-slate-800">
+
+                <!-- Form Container -->
+                <div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm p-8 border border-slate-100 dark:border-slate-800">
                     <form id="entryForm" class="space-y-8">
-                        <!-- Section: Basic Information -->
+
+                        <!-- Section: Primary Vehicle Information -->
                         <div>
-                            <div
-                                class="flex items-center gap-2 mb-6 border-b border-slate-50 dark:border-slate-800 pb-2">
+                            <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100 dark:border-slate-800">
                                 <span class="material-symbols-outlined text-accent-green">info</span>
-                                <h3
-                                    class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">
-                                    Primary Vehicle Information</h3>
+                                <h3 class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">Primary Vehicle Information</h3>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Gate Entry
-                                        No.</label>
-                                    <input name="gateEntryNo"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="GE-2024-001" type="text" required />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Gate Entry No.</label>
+                                    <input name="gateEntryNo" type="text" placeholder="GE-2024-001" required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle
-                                        Number</label>
-                                    <input name="vehicleNumber"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="e.g. MH 12 AB 1234" type="text" required />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle Number</label>
+                                    <input name="vehicleNumber" type="text" placeholder="e.g. MH 12 AB 1234" required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle
-                                        Type</label>
-                                    <select name="vehicleType"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" required>
-                                        <option>Select type</option>
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Vehicle Type</label>
+                                    <select name="vehicleType" required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11">
+                                        <option value="">Select type</option>
                                         <option>6-Wheeler Truck</option>
                                         <option>10-Wheeler Truck</option>
                                         <option>Trailer</option>
@@ -132,104 +110,84 @@ href="report"
                                 </div>
                             </div>
                         </div>
-                        <!-- Section: Logistics Details -->
+
+                        <!-- Section: Logistics & Transporter -->
                         <div>
-                            <div
-                                class="flex items-center gap-2 mb-6 border-b border-slate-50 dark:border-slate-800 pb-2">
+                            <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100 dark:border-slate-800">
                                 <span class="material-symbols-outlined text-accent-green">local_shipping</span>
-                                <h3
-                                    class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">
-                                    Logistics &amp; Transporter</h3>
+                                <h3 class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">Logistics &amp; Transporter</h3>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 <div class="lg:col-span-2 space-y-2">
-                                    <label
-                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Transporter</label>
-                                    <input name="transporter"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="Search transporter name..." type="text" required />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Transporter</label>
+                                    <input name="transporter" type="text" placeholder="Search transporter name..." required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Inward
-                                        Type</label>
-                                    <select name="inwardType"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" required>
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Inward Type</label>
+                                    <select name="inwardType" required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11">
                                         <option>Raw Material</option>
                                         <option>Finished Goods</option>
                                         <option>Others</option>
                                     </select>
                                 </div>
                                 <div class="space-y-2">
-                                    <label
-                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">Location</label>
-                                    <input name="location"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        placeholder="Bay / Yard No." type="text" required />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Location</label>
+                                    <input name="location" type="text" placeholder="Bay / Yard No." required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                             </div>
                         </div>
+
                         <!-- Section: Timing & Weight -->
-                        <div
-                            class="bg-slate-50 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-100 dark:border-slate-800">
-                            <div
-                                class="flex items-center gap-2 mb-6 border-b border-slate-100 dark:border-slate-700 pb-2">
+                        <div class="bg-slate-50 dark:bg-slate-800/30 p-6 rounded-xl border border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center gap-2 mb-6 pb-2 border-b border-slate-100 dark:border-slate-700">
                                 <span class="material-symbols-outlined text-accent-green">schedule</span>
-                                <h3
-                                    class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">
-                                    Timing &amp; Weight Details</h3>
+                                <h3 class="font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-xs">Timing &amp; Weight Details</h3>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Reporting
-                                        Time &amp; Date</label>
-                                    <input name="reportingTimeDate"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        type="datetime-local" required />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Reporting Time &amp; Date</label>
+                                    <input name="reportingTimeDate" type="datetime-local" required
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">In Date
-                                        &amp; Time</label>
-                                    <input name="inDateTime"
-                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11"
-                                        type="datetime-local" />
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">In Date &amp; Time</label>
+                                    <input name="inDateTime" type="datetime-local"
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11" />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tare Weight
-                                        (KG)</label>
+                                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Tare Weight (KG)</label>
                                     <div class="relative">
-                                        <input name="tareWeight"
-                                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11 pr-12"
-                                            placeholder="0.00" type="number" step="0.01" />
-                                        <span
-                                            class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">KG</span>
+                                        <input name="tareWeight" type="number" step="0.01" placeholder="0.00"
+                                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 focus:ring-2 focus:ring-accent-green/20 focus:border-accent-green text-sm h-11 pr-12" />
+                                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">KG</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Form Actions -->
-                        <div
-                            class="flex items-center justify-end gap-4 pt-6 border-t border-slate-100 dark:border-slate-800">
-                            <button
-                                class="px-8 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center gap-2"
-                                type="reset">
+                        <div class="flex items-center justify-end gap-4 pt-6 border-t border-slate-100 dark:border-slate-800">
+                            <button type="reset"
+                                class="px-8 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center gap-2">
                                 <span class="material-symbols-outlined text-lg">restart_alt</span>
                                 Reset Form
                             </button>
-                            <button id="submitBtn"
-                                class="px-10 py-2.5 rounded-lg bg-accent-green text-white font-semibold text-sm hover:bg-green-600 shadow-lg shadow-accent-green/20 transition-all flex items-center gap-2"
-                                type="submit">
+                            <button id="submitBtn" type="submit"
+                                class="px-10 py-2.5 rounded-lg bg-accent-green text-white font-semibold text-sm hover:bg-green-600 shadow-lg shadow-accent-green/20 transition-all flex items-center gap-2">
                                 <span class="material-symbols-outlined text-lg">check_circle</span>
                                 Submit Entry
                             </button>
                         </div>
                     </form>
                 </div>
-                <!-- Recent Activity/Status Bar -->
+
+                <!-- Stats Bar -->
                 <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div
-                        class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+                    <div class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                             <span class="material-symbols-outlined text-blue-600">login</span>
                         </div>
                         <div>
@@ -237,10 +195,8 @@ href="report"
                             <p class="text-lg font-bold">124</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
-                        <div
-                            class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
+                    <div class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
                             <span class="material-symbols-outlined text-orange-600">timer</span>
                         </div>
                         <div>
@@ -248,8 +204,7 @@ href="report"
                             <p class="text-lg font-bold">12</p>
                         </div>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+                    <div class="bg-white dark:bg-slate-900 p-4 rounded-lg border border-slate-200 dark:border-slate-800 flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center">
                             <span class="material-symbols-outlined text-accent-green">check_circle</span>
                         </div>
@@ -259,69 +214,76 @@ href="report"
                         </div>
                     </div>
                 </div>
+
             </div>
         </main>
     </div>
-</body>
 
-<script>
-    const token = localStorage.getItem('token');
-    if (!token) {
-        window.location.href = '/loginpage';
-    }
+    <script>
+        // Auth guard
+        if (!localStorage.getItem('token')) {
+            window.location.href = '/loginpage';
+        }
 
-    document.getElementById('entryForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
+        const form = document.getElementById('entryForm');
         const submitBtn = document.getElementById('submitBtn');
         const messageDiv = document.getElementById('entryMessage');
-        
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> Submitting...';
-        
-        const formData = {
-            gateEntryNo: document.querySelector('[name="gateEntryNo"]').value,
-            vehicleNumber: document.querySelector('[name="vehicleNumber"]').value,
-            vehicleType: document.querySelector('[name="vehicleType"]').value,
-            transporter: document.querySelector('[name="transporter"]').value,
-            inwardType: document.querySelector('[name="inwardType"]').value,
-            location: document.querySelector('[name="location"]').value,
-            reportingTimeDate: document.querySelector('[name="reportingTimeDate"]').value,
-            inDateTime: document.querySelector('[name="inDateTime"]').value || null,
-            tareWeight: document.querySelector('[name="tareWeight"]').value
-        };
+        const SUBMIT_LABEL = '<span class="material-symbols-outlined text-lg">check_circle</span> Submit Entry';
 
-        try {
-            const response = await fetch('/api/gate-entries', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(formData)
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                messageDiv.className = 'mb-4 p-3 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300';
-                messageDiv.textContent = '✅ Gate entry submitted successfully!';
-                messageDiv.classList.remove('hidden');
-                document.getElementById('entryForm').reset();
-                setTimeout(() => messageDiv.classList.add('hidden'), 3000);
-            } else {
-                messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
-                messageDiv.textContent = '❌ Error: ' + data.error;
-                messageDiv.classList.remove('hidden');
-            }
-        } catch (error) {
-            messageDiv.className = 'mb-4 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300';
-            messageDiv.textContent = '❌ Error: ' + error.message;
+        function showMessage(type, text) {
+            const isSuccess = type === 'success';
+            messageDiv.className = `mb-4 p-3 rounded-lg ${
+                isSuccess
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                    : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
+            }`;
+            messageDiv.textContent = (isSuccess ? '✅ ' : '❌ ') + text;
             messageDiv.classList.remove('hidden');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span>Submit Entry';
+            if (isSuccess) setTimeout(() => messageDiv.classList.add('hidden'), 3000);
         }
-    });
-</script>
 
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> Submitting...';
+
+            const formData = {
+                gateEntryNo:       form.querySelector('[name="gateEntryNo"]').value,
+                vehicleNumber:     form.querySelector('[name="vehicleNumber"]').value,
+                vehicleType:       form.querySelector('[name="vehicleType"]').value,
+                transporter:       form.querySelector('[name="transporter"]').value,
+                inwardType:        form.querySelector('[name="inwardType"]').value,
+                location:          form.querySelector('[name="location"]').value,
+                reportingTimeDate: form.querySelector('[name="reportingTimeDate"]').value,
+                inDateTime:        form.querySelector('[name="inDateTime"]').value || null,
+                tareWeight:        form.querySelector('[name="tareWeight"]').value,
+            };
+
+            try {
+                const response = await fetch('/api/gate-entries', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('success', 'Gate entry submitted successfully!');
+                    form.reset();
+                } else {
+                    showMessage('error', data.error || 'Submission failed.');
+                }
+            } catch (err) {
+                showMessage('error', err.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = SUBMIT_LABEL;
+            }
+        });
+    </script>
+</body>
 </html>
